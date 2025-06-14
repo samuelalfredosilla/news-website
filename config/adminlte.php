@@ -2,6 +2,78 @@
 
 return [
 
+    // config/adminlte.php
+
+    'menu' => [
+        // Navbar items
+        [
+            'type'         => 'navbar-search',
+            'text'         => 'search',
+            'topnav_right' => true,
+        ],
+        [
+            'type'         => 'fullscreen-widget',
+            'topnav_right' => true,
+        ],
+
+        // Sidebar items
+        [
+            'text' => 'blog',
+            'url'  => 'admin/blog',
+            'can'  => 'manage-blog', // Contoh permission
+        ],
+        ['header' => 'ADMINISTRASI'],
+        [
+            'text'        => 'Dashboard',
+            'url'         => 'dashboard',
+            'icon'        => 'fas fa-fw fa-tachometer-alt',
+            'active'      => ['dashboard'],
+        ],
+        [
+            'text' => 'Manajemen Berita',
+            'icon' => 'fas fa-fw fa-newspaper',
+            'can'  => 'create news', // Hanya yang punya permission ini yang bisa lihat
+            'submenu' => [
+                [
+                    'text' => 'Daftar Berita',
+                    'url'  => 'admin/news_articles',
+                    'icon' => 'fas fa-fw fa-list',
+                    'active' => ['admin/news_articles*'],
+                    'can'  => 'edit news', // Siapa saja yang bisa melihat daftar berita
+                ],
+                [
+                    'text' => 'Tambah Berita Baru',
+                    'url'  => 'admin/news_articles/create',
+                    'icon' => 'fas fa-fw fa-plus-square',
+                    'active' => ['admin/news_articles/create'],
+                    'can'  => 'create news',
+                ],
+            ],
+        ],
+        [
+            'text' => 'Manajemen Kategori',
+            'icon' => 'fas fa-fw fa-tags',
+            'url'  => 'admin/categories',
+            'active' => ['admin/categories*'],
+            'can'  => 'manage categories', // Hanya Admin dan Editor
+        ],
+        [
+            'text' => 'Manajemen User',
+            'icon' => 'fas fa-fw fa-users',
+            'url'  => 'admin/users',
+            'active' => ['admin/users*'],
+            'can'  => 'manage users', // Hanya Admin
+        ],
+        ['header' => 'PENGATURAN AKUN'],
+        [
+            'text' => 'Profil',
+            'url'  => 'profile',
+            'icon' => 'fas fa-fw fa-user',
+            'active' => ['profile'],
+        ],
+        // ... item lainnya
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Title
