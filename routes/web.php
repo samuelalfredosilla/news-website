@@ -4,8 +4,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\NewsArticleController;
+use App\Http\Controllers\Admin\UserController; // Import UserController
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,4 +70,36 @@ Route::get('/news', [App\Http\Controllers\PublicController::class, 'newsList'])-
 Route::get('/news/{slug}', [App\Http\Controllers\PublicController::class, 'newsDetail'])->name('news.detail');
 Route::get('/category/{slug}', [App\Http\Controllers\PublicController::class, 'newsByCategory'])->name('news.by_category');
 
+
+// Grup Rute yang memerlukan otentikasi
+Route::middleware(['auth'])->group(function () { // Hapus `, 'verified'` jika sudah dilakukan sebelumnya
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Admin Panel Routes
+    Route::prefix('admin')->name('admin.')->group(function () {
+        // Rute untuk Kategori (dilindungi oleh permission di controller)
+        Route::resource('categories', CategoryController::class);
+
+        // Rute untuk Berita (dilindungi oleh permission di controller)
+        Route::resource('news_articles', NewsArticleController::class);
+        Route::put('news_articles/{news_article}/publish', [NewsArticleController::class, 'publish'])->name('news_articles.publish')->middleware('permission:publish news');
+        Route::put('news_articles/{news_article}/unpublish', [NewsArticleController::class, 'unpublish'])->name('news_articles.unpublish')->middleware('permission:publish news');
+
+        // --- Rute Manajemen User (Hanya untuk Admin) ---
+        // Middleware 'role:admin' sudah diterapkan di constructor UserController
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+        Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+        // Anda juga bisa menggunakan Route::resource('users', UserController::class); jika Anda ingin semua CRUD standar
+        // dan mengelola middleware permission di dalam controller atau policy.
+        // Namun, untuk role 'admin' yang punya akses penuh, ini lebih sederhana.
+    });
+});
 require __DIR__.'/auth.php';

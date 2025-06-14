@@ -64,6 +64,17 @@ return [
             'active' => ['admin/users*'],
             'can'  => 'manage users', // Hanya Admin
         ],
+
+         // --- Tambahkan ini ---
+        [
+            'text' => 'Manajemen User',
+            'icon' => 'fas fa-fw fa-users',
+            'url'  => 'admin/users',
+            'active' => ['admin/users*', 'admin/users/*/edit'], // Pastikan url edit juga aktifkan menu ini
+            'can'  => 'manage users', // Hanya Admin
+        ],
+        // --- Akhir Tambahan ---
+
         ['header' => 'PENGATURAN AKUN'],
         [
             'text' => 'Profil',
