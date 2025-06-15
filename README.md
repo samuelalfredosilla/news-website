@@ -55,6 +55,6 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
      - Berita yang di publish, tidak langsung ditampilkan tapi masih berstatus draft
        ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/draft.jpg?raw=true)
        
- 7. Fitur approval berita untuk dipublish/tidak oleh user login dengan level akses editor
-    ![alt text](?raw=true)
+ 7. Fitur approval berita untuk dipublish/tidak oleh user login dengan level akses editor<br>
+    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/approval.jpg?raw=true)
     
