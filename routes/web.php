@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\NewsArticleController;
 use App\Http\Controllers\Admin\UserController; // Import UserController
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Auth\SocialLoginController; // Impor SocialLoginController
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -124,5 +125,9 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
+
+// Rute untuk Google Login
+Route::get('auth/google', [SocialLoginController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback', [SocialLoginController::class, 'handleGoogleCallback']);
 
 require __DIR__.'/auth.php';

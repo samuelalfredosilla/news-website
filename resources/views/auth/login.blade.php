@@ -1,8 +1,8 @@
-@extends('adminlte::auth.login') {{-- EXTEND LAYOUT AUTH ADMINLTE --}}
+@extends('adminlte::auth.login')
 
-@section('auth_header', __('Login')) {{-- Tambahkan Header untuk Form --}}
+@section('auth_header', __('Login'))
 
-@section('auth_body') {{-- Body Form akan masuk ke sini --}}
+@section('auth_body')
     @if (session('status'))
         <div class="alert alert-info alert-dismissible fade show" role="alert">
             {{ session('status') }}
@@ -10,9 +10,16 @@
         </div>
     @endif
 
-    @if (session('success')) {{-- Untuk pesan sukses setelah registrasi --}}
+    @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if (session('error')) {{-- Tambahkan ini untuk menampilkan error dari social login --}}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('error') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
@@ -62,9 +69,20 @@
             </div>
         </div>
     </form>
+
+    {{-- --- TOMBOL LOGIN DENGAN GOOGLE --- --}}
+    <div class="social-auth-links text-center mt-2 mb-3">
+        <p>- OR -</p>
+        <a href="{{ route('auth.google') }}" class="btn btn-block btn-danger">
+            <i class="fab fa-google-plus mr-2"></i> {{ __('Login using Google+') }}
+        </a>
+        {{-- Anda bisa menambahkan provider lain di sini (misal Facebook, GitHub) --}}
+    </div>
+    {{-- --- AKHIR TOMBOL LOGIN DENGAN GOOGLE --- --}}
+
 @stop
 
-@section('auth_footer') {{-- Tambahkan Footer untuk Link Tambahan --}}
+@section('auth_footer')
     @if (Route::has('password.request'))
         <p class="mb-1">
             <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
