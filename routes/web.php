@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\NewsArticleController;
 use App\Http\Controllers\Admin\UserController; // Import UserController
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -120,5 +121,8 @@ Route::middleware(['auth'])->group(function () {
         // ... (user management routes)
     });
 });
+
+Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
 
 require __DIR__.'/auth.php';
