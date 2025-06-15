@@ -8,18 +8,41 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
 ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/1.jpg?raw=true)
 
 2. Integrasi dengan template bootstrap: AdminLTE, SB Admin, atau SB Admin 2
+![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/adminlte.jpg?raw=true)
+
+3. Terdapat fitur:
+   Sign In (login)
+   ![alt text](?raw=true)
+
+   Register
+   ![alt text](?raw=true)
+   
+   Reset Password
+   ![alt text](?raw=true)
+   
+   Lupa Password
+   ![alt text](?raw=true)
+   
+   Remember Me
+   ![alt text](?raw=true)
+   
+   Edit Profil User
+   ![alt text](?raw=true)
+
+5. Fitur optional: login menggunakan Github, Google, dan Microsoft 
 ![alt text](?raw=true)
 
-3. Terdapat fitur: Sign In (login), Register, Reset Password, Lupa Password, Remember Me dan Edit Profil User
-![alt text](?raw=true)
+6. Level akses user:
+   Admin
+   ![alt text](?raw=true)
 
-4. Fitur optional: login menggunakan Github, Google, dan Microsoft 
-![alt text](?raw=true)
-
-5. Level akses user: Admin, editor, dan wartawan
-![alt text](?raw=true)
-
-6. Terdapat fitur CRUD untuk berita, dengan ketentuan:
+   editor
+   ![alt text](?raw=true)
+   
+   wartawan
+   ![alt text](?raw=true)
+   
+8. Terdapat fitur CRUD untuk berita, dengan ketentuan:
      - terdapat unggah gambar
        ![alt text](?raw=true)
        
@@ -32,6 +55,6 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
      - Berita yang di publish, tidak langsung ditampilkan tapi masih berstatus draft
        ![alt text](?raw=true)
        
- 7. Fitur approval berita untuk dipublish/tidak oleh user login dengan level akses editor
+ 9. Fitur approval berita untuk dipublish/tidak oleh user login dengan level akses editor
     ![alt text](?raw=true)
     
