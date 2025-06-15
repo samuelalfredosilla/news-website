@@ -1,7 +1,7 @@
 ## Tugas UAS Pemrograma WEB Lanjut Membuat aplikasi starter kit menggunakan framework Laravel dan Codeigniter.
 
 ## Berita Kita
-![alt text](?raw=true)
+![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/image.png?raw=true)
 Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akurat, dan terpercaya dari berbagai bidang kehidupan. Dengan tampilan yang modern dan mudah diakses, Berita Kita hadir untuk memenuhi kebutuhan informasi masyarakat dari berbagai kalangan.
 
 1. Menggunakan laravel versi 10.x keatas dan Codeigniter versi terbaru
