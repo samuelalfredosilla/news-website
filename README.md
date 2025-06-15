@@ -12,27 +12,27 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
 
 3. Terdapat fitur:
    Sign In (login)
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/login.jpg?raw=true)
 
    Register
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/regis.jpg?raw=true)
    
    Reset Password
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/reset.jpg?raw=true)
    
    Lupa Password
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/forgot.jpg?raw=true)
    
    Remember Me
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/login.jpg?raw=true?raw=true)
    
    Edit Profil User
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/edit%20user%20profil.jpg?raw=true)
 
-5. Fitur optional: login menggunakan Github, Google, dan Microsoft 
+4. Fitur optional: login menggunakan Github, Google, dan Microsoft 
 ![alt text](?raw=true)
 
-6. Level akses user:
+5. Level akses user:
    Admin
    ![alt text](?raw=true)
 
@@ -42,7 +42,7 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
    wartawan
    ![alt text](?raw=true)
    
-8. Terdapat fitur CRUD untuk berita, dengan ketentuan:
+6. Terdapat fitur CRUD untuk berita, dengan ketentuan:
      - terdapat unggah gambar
        ![alt text](?raw=true)
        
@@ -55,6 +55,6 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
      - Berita yang di publish, tidak langsung ditampilkan tapi masih berstatus draft
        ![alt text](?raw=true)
        
- 9. Fitur approval berita untuk dipublish/tidak oleh user login dengan level akses editor
+ 7. Fitur approval berita untuk dipublish/tidak oleh user login dengan level akses editor
     ![alt text](?raw=true)
     
