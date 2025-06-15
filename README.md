@@ -5,7 +5,7 @@
 Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akurat, dan terpercaya dari berbagai bidang kehidupan. Dengan tampilan yang modern dan mudah diakses, Berita Kita hadir untuk memenuhi kebutuhan informasi masyarakat dari berbagai kalangan.
 
 1. Menggunakan laravel versi 10.x keatas dan Codeigniter versi terbaru
-![alt text](?raw=true)
+![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/1.jpg?raw=true)
 
 2. Integrasi dengan template bootstrap: AdminLTE, SB Admin, atau SB Admin 2
 ![alt text](?raw=true)
