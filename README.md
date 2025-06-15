@@ -20,10 +20,10 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
    Reset Password
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/reset.jpg?raw=true)
    
-   Lupa Password
+   Lupa Password<br>
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/forgot.jpg?raw=true)
    
-   Remember Me
+   Remember Me<br>
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/login.jpg?raw=true?raw=true)
    
    Edit Profil User
