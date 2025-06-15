@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles; // Tambahkan ini
+use App\Models\NewsArticle;
 
 
 class User extends Authenticatable
@@ -44,4 +45,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // --- TAMBAHKAN METHOD RELASI INI ---
+    /**
+     * Get the news articles for the user.
+     */
+    public function newsArticles()
+    {
+        return $this->hasMany(NewsArticle::class, 'user_id'); // 'user_id' adalah foreign key di tabel news_articles
+    }
+    // --- AKHIR TAMBAHAN ---
 }

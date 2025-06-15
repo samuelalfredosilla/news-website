@@ -17,28 +17,29 @@ class RolePermissionSeeder extends Seeder
 
         // 1. Create Permissions
         // Permissions for News Articles
-        Permission::create(['name' => 'create news']);
-        Permission::create(['name' => 'edit news']);
-        Permission::create(['name' => 'delete news']);
-        Permission::create(['name' => 'publish news']); // Hanya untuk Editor/Admin
+        Permission::firstOrCreate(['name' => 'create news']);
+        Permission::firstOrCreate(['name' => 'edit news']);
+        Permission::firstOrCreate(['name' => 'delete news']); // Pastikan ini ada
+        Permission::firstOrCreate(['name' => 'publish news']);
 
         // Permissions for Categories
-        Permission::create(['name' => 'manage categories']);
+        Permission::firstOrCreate(['name' => 'manage categories']);
 
         // Permissions for Users (only Admin)
-        Permission::create(['name' => 'manage users']);
+        Permission::firstOrCreate(['name' => 'manage users']);
 
         // 2. Create Roles and assign Permissions
         // Admin Role
-        $adminRole = Role::create(['name' => 'admin']);
-        $adminRole->givePermissionTo(Permission::all()); // Admin memiliki semua izin
+        $adminRole = Role::firstOrCreate(['name' => 'admin']);
+        $adminRole->givePermissionTo(Permission::all());
 
         // Editor Role
-        $editorRole = Role::create(['name' => 'editor']);
+        $editorRole = Role::firstOrCreate(['name' => 'editor']);
+        // Pastikan editor punya permission ini:
         $editorRole->givePermissionTo(['create news', 'edit news', 'delete news', 'publish news', 'manage categories']);
 
         // Wartawan (Reporter) Role
-        $wartawanRole = Role::create(['name' => 'wartawan']);
+        $wartawanRole = Role::firstOrCreate(['name' => 'wartawan']);
         $wartawanRole->givePermissionTo(['create news', 'edit news']); // Wartawan hanya bisa membuat & mengedit miliknya sendiri
 
         // 3. Create initial users and assign roles

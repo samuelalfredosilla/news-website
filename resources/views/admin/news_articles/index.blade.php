@@ -13,6 +13,19 @@
             </div>
         </div>
         <div class="card-body p-0">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -26,7 +39,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($newsArticles as $article)
+                    @forelse($newsArticles as $article)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $article->title }}</td>
@@ -41,36 +54,51 @@
                         </td>
                         <td>{{ $article->published_at ? $article->published_at->format('d M Y H:i') : '-' }}</td>
                         <td>
-                            @can('edit news')
-                                @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('editor') || (auth()->user()->hasRole('wartawan') && auth()->id() == $article->user_id))
-                                    <a href="{{ route('admin.news_articles.edit', $article) }}" class="btn btn-info btn-xs">Edit</a>
-                                @endif
-                            @endcan
+                            @php
+                                $user = Auth::user();
+                                $canEdit = $user->hasAnyRole(['admin', 'editor']) || ($user->hasRole('wartawan') && $user->id === $article->user_id && $article->status === 'draft');
+                                $canDelete = $user->hasAnyRole(['admin', 'editor']) || ($user->hasRole('wartawan') && $user->id === $article->user_id);
+                                $canPublish = $user->can('publish news');
+                            @endphp
 
-                            @can('publish news')
+                            @if($canEdit)
+                                <a href="{{ route('admin.news_articles.edit', $article) }}" class="btn btn-info btn-xs">Edit</a>
+                            @endif
+
+                            @if($canPublish)
                                 @if($article->status == 'draft')
-                                    <a href="{{ route('admin.news_articles.publish', $article) }}" class="btn btn-success btn-xs">Terbitkan</a>
-                                @else
-                                    <a href="{{ route('admin.news_articles.unpublish', $article) }}" class="btn btn-secondary btn-xs">Tarik</a>
-                                @endif
-                            @endcan
-
-                            @can('delete news')
-                                @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('wartawan') && auth()->id() == $article->user_id))
-                                    <form action="{{ route('admin.news_articles.destroy', $article) }}" method="POST" style="display:inline-block;">
+                                    <form action="{{ route('admin.news_articles.publish', $article) }}" method="POST" style="display:inline-block;">
                                         @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')">Hapus</button>
+                                        @method('PUT')
+                                        <button type="submit" class="btn btn-success btn-xs" onclick="return confirm('Apakah Anda yakin ingin menerbitkan berita ini?')">Terbitkan</button>
+                                    </form>
+                                @else
+                                    <form action="{{ route('admin.news_articles.unpublish', $article) }}" method="POST" style="display:inline-block;">
+                                        @csrf
+                                        @method('PUT')
+                                        <button type="submit" class="btn btn-secondary btn-xs" onclick="return confirm('Apakah Anda yakin ingin menarik berita ini?')">Tarik</button>
                                     </form>
                                 @endif
-                            @endcan
+                            @endif
+
+                            @if($canDelete)
+                                <form action="{{ route('admin.news_articles.destroy', $article) }}" method="POST" style="display:inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')">Hapus</button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center">Belum ada berita.</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
             <div class="card-footer">
-                {{ $newsArticles->links('pagination::bootstrap-5') }} {{-- Pastikan pagination sesuai Bootstrap 5 --}}
+                {{ $newsArticles->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>

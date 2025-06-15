@@ -102,4 +102,23 @@ Route::middleware(['auth'])->group(function () { // Hapus `, 'verified'` jika su
         // Namun, untuk role 'admin' yang punya akses penuh, ini lebih sederhana.
     });
 });
+
+// Grup Rute yang memerlukan otentikasi
+Route::middleware(['auth'])->group(function () {
+    // ... (dashboard, profile, admin user routes)
+
+    // Admin Panel Routes
+    Route::prefix('admin')->name('admin.')->group(function () {
+        // ... (categories routes)
+
+        // Rute untuk Berita
+        Route::resource('news_articles', NewsArticleController::class);
+        // Tambahan rute untuk publish/unpublish
+        Route::put('news_articles/{news_article}/publish', [NewsArticleController::class, 'publish'])->name('news_articles.publish')->middleware('permission:publish news');
+        Route::put('news_articles/{news_article}/unpublish', [NewsArticleController::class, 'unpublish'])->name('news_articles.unpublish')->middleware('permission:publish news');
+
+        // ... (user management routes)
+    });
+});
+
 require __DIR__.'/auth.php';

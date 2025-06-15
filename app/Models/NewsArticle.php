@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str; // Untuk slug
+use Illuminate\Support\Str;
 
 class NewsArticle extends Model
 {
@@ -42,6 +42,7 @@ class NewsArticle extends Model
         return $this->belongsTo(Category::class);
     }
 
+    // Scope untuk mengambil hanya berita yang sudah diterbitkan
     public function scopePublished($query)
     {
         return $query->where('status', 'published')
