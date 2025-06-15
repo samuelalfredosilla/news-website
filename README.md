@@ -1,4 +1,4 @@
-## Tugas UAS Pemrograma WEB Lanjut Membuat aplikasi starter kit menggunakan framework Laravel dan Codeigniter.
+## Tugas UAS Pemrograman WEB Lanjut Membuat aplikasi starter kit menggunakan framework Laravel dan Codeigniter.
 
 ## Berita Kita
 ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/image.png?raw=true)
