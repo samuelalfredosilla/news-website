@@ -34,13 +34,13 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
 
 5. Level akses user:
    Admin
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/admin.jpg?raw=true)
 
    editor
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/editor.jpg?raw=true)
    
    wartawan
-   ![alt text](?raw=true)
+   ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/wartawan.jpg?raw=true)
    
 6. Terdapat fitur CRUD untuk berita, dengan ketentuan:
      - terdapat unggah gambar
