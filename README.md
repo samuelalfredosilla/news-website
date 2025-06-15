@@ -14,7 +14,7 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
    Sign In (login)
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/login.jpg?raw=true)
 
-   Register
+   Register<br>
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/regis.jpg?raw=true)
    
    Reset Password
