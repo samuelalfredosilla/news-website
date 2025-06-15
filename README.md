@@ -11,13 +11,13 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
 ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/adminlte.jpg?raw=true)
 
 3. Terdapat fitur:
-   Sign In (login)
+   Sign In (login)<br>
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/login.jpg?raw=true)
 
    Register<br>
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/regis.jpg?raw=true)
    
-   Reset Password
+   Reset Password<br>
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/reset.jpg?raw=true)
    
    Lupa Password<br>
@@ -26,7 +26,7 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
    Remember Me<br>
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/login.jpg?raw=true?raw=true)
    
-   Edit Profil User
+   Edit Profil User<br>
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/edit%20user%20profil.jpg?raw=true)
 
 4. Fitur optional: login menggunakan Github, Google, dan Microsoft 
