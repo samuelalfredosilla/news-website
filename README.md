@@ -43,17 +43,17 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/wartawan.jpg?raw=true)
    
 6. Terdapat fitur CRUD untuk berita, dengan ketentuan:
-     - terdapat unggah gambar
-       ![alt text](?raw=true)
+     - terdapat unggah gambar<br>
+       ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/unggah.jpg?raw=true)
        
-     - terdapat kategori berita yang diambilkan dari tabel kategori
-       ![alt text](?raw=true)
+     - terdapat kategori berita yang diambilkan dari tabel kategori<br>
+       ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/kategori.jpg?raw=true)
        
-     - pengirim berita sesuai dengan yang login dengan level akses: wartawan
-       ![alt text](?raw=true)
+     - pengirim berita sesuai dengan yang login dengan level akses: wartawan<br>
+       ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/pengirim%20berita%20akses%20wartawan.jpg?raw=true)
        
      - Berita yang di publish, tidak langsung ditampilkan tapi masih berstatus draft
-       ![alt text](?raw=true)
+       ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/draft.jpg?raw=true)
        
  7. Fitur approval berita untuk dipublish/tidak oleh user login dengan level akses editor
     ![alt text](?raw=true)
