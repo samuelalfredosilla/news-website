@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($users as $user)
+                    @forelse($users as $user) {{-- Pastikan loop ini ada --}}
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $user->name }}</td>
@@ -47,9 +47,9 @@
                             @endforelse
                         </td>
                         <td>
-                            @can('manage users') {{-- Memastikan hanya admin yang melihat tombol ini --}}
+                            @can('manage users')
                                 <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-info btn-xs">Edit</a>
-                                @if (Auth::user()->id !== $user->id) {{-- Admin tidak bisa menghapus dirinya sendiri --}}
+                                @if (Auth::user()->id !== $user->id)
                                     <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" style="display:inline-block;">
                                         @csrf
                                         @method('DELETE')
