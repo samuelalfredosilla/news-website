@@ -30,7 +30,7 @@ Berita Kita adalah portal berita digital yang menyajikan informasi terkini, akur
    ![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/edit%20user%20profil.jpg?raw=true)
 
 4. Fitur optional: login menggunakan Github, Google, dan Microsoft 
-![alt text](?raw=true)
+![alt text](https://github.com/samuelalfredosilla/news-website/blob/main/login.jpg?raw=true)
 
 5. Level akses user:
    Admin
